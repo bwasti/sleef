@@ -7,6 +7,33 @@
 #define PREC_TARGET 24
 
 #if 1
+#define N 7
+#define S 50
+#define L 0
+#define MIN -10
+#define MAX 10
+#define PMUL 1
+#define PADD 0
+#define Q 10000
+
+void TARGET(mpfr_t ret, mpfr_t a) { 
+  mpfr_t one, neg, x, y;
+  mpfr_inits(one, neg, x, y, NULL);
+  mpfr_set_d(one, 1, GMP_RNDN);
+  mpfr_set_d(neg, -1.0, GMP_RNDN);
+  mpfr_mul(x, a, neg, GMP_RNDN);
+  mpfr_exp(x, x, GMP_RNDN);
+  mpfr_add(y, one, x, GMP_RNDN);
+  mpfr_div(ret, one, y, GMP_RNDN);
+}
+
+void CFUNC(mpfr_t dst, mpfr_t src) { mpfr_set(dst, src, GMP_RNDN); }
+//#define FIXCOEF0 1.0
+//#define FIXCOEF1 1.0
+//#define FIXCOEF2 0.5
+#endif
+
+#if 0
 #define N 5           // Degree of equation
 #define S 81          // Number of samples for phase 1
 #define L 0           // Number of high precision coefficients

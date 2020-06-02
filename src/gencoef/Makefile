@@ -2,7 +2,7 @@
 all : gencoef
 
 gencoef : gencoef.c simplexfr.c sp.h dp.h ld.h qp.h
-	gcc -O gencoef.c simplexfr.c -o gencoef -lmpfr -lm
+	gcc -O2 gencoef.c simplexfr.c -o gencoef -lmpfr -lm
 
 .PHONY: clean
 clean :

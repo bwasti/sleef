@@ -13,8 +13,8 @@
 #include <time.h>
 #include <mpfr.h>
 
-//#include "sp.h"
-#include "dp.h"
+#include "sp.h"
+//#include "dp.h"
 //#include "ld.h"
 //#include "qp.h"
 
